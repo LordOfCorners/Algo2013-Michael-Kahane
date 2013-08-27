@@ -17,5 +17,14 @@ class Rectangle {
         void update();
         void draw();
     
-        ofPoint pos; 
+        void interpolateByPct(float myPct);
+    
+        void xenoToPoint(float catchX, float catchY);
+    
+        ofPoint pos;
+    
+        //for interpolation
+        ofPoint posA, posB;        
+    
+        float pct;
 };

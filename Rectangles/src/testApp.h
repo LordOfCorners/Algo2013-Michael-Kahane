@@ -20,6 +20,7 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    Rectangle myRect; 
+    Rectangle myRect;
+    float pct;
 		
 };

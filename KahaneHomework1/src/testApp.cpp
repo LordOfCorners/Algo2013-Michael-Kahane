@@ -2,8 +2,8 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    slowRect.setup(ofPoint(0,50), ofColor(100,100,255),NULL,20,20);
-    fastRect.setup(ofPoint(0,140), ofColor(200,250,150),NULL,20,20);
+    slowRect.setup(ofPoint(10,50), ofColor(100,100,255),NULL,20,20);
+    fastRect.setup(ofPoint(10,140), ofColor(200,250,150),NULL,20,20);
     
     for(int i=0;i<sizeof(xenoRect)/sizeof(*xenoRect);i++){
         xenoRect[i].setup(ofPoint(0,300), ofColor(0,20*i+50,150+10*i), (0.03f*i)+0.05f,20,20);

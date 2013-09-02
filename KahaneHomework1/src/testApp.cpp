@@ -25,14 +25,17 @@ void testApp::update(){
     fastRect.update(25);
     
     //Multiple Xenos
-//    for(int i=0;i<sizeof(xenoRect)/sizeof(*xenoRect);i++){
-//        xenoRect[i].xenoToPoint(mouseX, mouseY);
-//    }
-    
+    if(!trails){
+        for(int i=0;i<sizeof(xenoRect)/sizeof(*xenoRect);i++){
+            xenoRect[i].xenoToPoint(mouseX, mouseY);
+        }
+    }
     //Multiple Xeno Trail
-    xenoRect[0].xenoToPoint(mouseX, mouseY);
-    for(int i=1;i<sizeof(xenoRect)/sizeof(*xenoRect);i++){
-        xenoRect[i].xenoToPoint(xenoRect[i-1].pos.x, xenoRect[i-1].pos.y);
+    else if(trails){
+        xenoRect[0].xenoToPoint(mouseX, mouseY);
+        for(int i=1;i<sizeof(xenoRect)/sizeof(*xenoRect);i++){
+            xenoRect[i].xenoToPoint(xenoRect[i-1].pos.x, xenoRect[i-1].pos.y);
+        }
     }
 
 }
@@ -51,20 +54,30 @@ void testApp::draw(){
     
     //Click to change Point A and Point B
     ofSetColor(255,150,150);
+    ofDrawBitmapString("Click to change point A or B (alternating)", 0 , 180);
     ofLine(a.x,a.y,b.x,b.y);
     ofDrawBitmapString("A", a.x, a.y);
     ofDrawBitmapString("B", b.x, b.y);
     
     //Multiple Xenos
-    for(int i=0;i<sizeof(xenoRect)/sizeof(*xenoRect);i++){
-        xenoRect[i].draw();
+    ofSetColor(240);
+    ofDrawBitmapString("Press X turn on the Xeno array and T to toggle the trail effect", 0 , 300);
+    if(drawXenos){
+        for(int i=0;i<sizeof(xenoRect)/sizeof(*xenoRect);i++){
+            xenoRect[i].draw();
+        }
     }
 
 }
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-
+    if(key=='t'){
+        trails =!trails;
+    }
+    if(key=='x'){
+        drawXenos=!drawXenos;
+    }
 }
 
 //--------------------------------------------------------------

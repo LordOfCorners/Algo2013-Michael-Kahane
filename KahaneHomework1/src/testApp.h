@@ -28,5 +28,5 @@ class testApp : public ofBaseApp{
         ofPoint a,b;
         int xenoTrailCounter;
         int clickCount;
-    
+        bool trails, drawXenos;
 };

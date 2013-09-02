@@ -6,7 +6,7 @@ void testApp::setup(){
     fastRect.setup(ofPoint(10,140), ofColor(200,250,150),NULL,20,20);
     
     for(int i=0;i<sizeof(xenoRect)/sizeof(*xenoRect);i++){
-        xenoRect[i].setup(ofPoint(0,300), ofColor(0,20*i+50,150+10*i), (0.03f*i)+0.05f,20,20);
+        xenoRect[i].setup(ofPoint(0,300), ofColor(0,20*i+50,150+10*i), (0.01f*i)+0.05f,20,20);
     }
     
     ofSetColor(255);

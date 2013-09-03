@@ -24,7 +24,7 @@ class testApp : public ofBaseApp{
         Rectangle slowRect;
         Rectangle fastRect;
         
-        Rectangle xenoRect[21];
+        vector<Rectangle> xenoRects;
         ofPoint a,b;
         int xenoTrailCounter;
         int clickCount;

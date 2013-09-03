@@ -2,6 +2,9 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
+    ofSetBackgroundAuto(false);
+    ofEnableAlphaBlending();
+    
     slowRect.setup(ofPoint(10,50), ofColor(100,100,255),NULL,20,20);
     fastRect.setup(ofPoint(10,140), ofColor(200,250,150),NULL,20,20);
     
@@ -24,7 +27,7 @@ void testApp::update(){
     slowRect.update(.0006);
     
     //Fastest non-moving speed
-    fastRect.update(25);
+    fastRect.update(20);
     
     //Multiple Xenos
     if(!trails){
@@ -44,7 +47,10 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    ofBackground(15);
+//    ofBackground(0);
+    ofColor semiTransparent(15,15,15,255*.80);
+    ofSetColor(semiTransparent);
+    ofRect(ofGetWindowWidth()/2,ofGetWindowHeight()/2,ofGetWindowWidth(),ofGetWindowHeight());
     
     //Slowest moving speed
     slowRect.displayInfo(ofPoint(0,0));

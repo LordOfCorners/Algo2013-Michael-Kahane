@@ -1,3 +1,5 @@
+//Worked on homework with Anthony Marefat.
+
 #include "testApp.h"
 
 //--------------------------------------------------------------
@@ -5,12 +7,12 @@ void testApp::setup(){
     ofSetBackgroundAuto(false);
     ofEnableAlphaBlending();
     
-    slowRect.setup(ofPoint(10,50), ofColor(100,100,255),NULL,20,20);
-    fastRect.setup(ofPoint(10,140), ofColor(200,250,150),NULL,20,20);
+    slowRect.setup(ofVec2f(10,50), ofColor(100,100,255),NULL,20,20);
+    fastRect.setup(ofVec2f(10,140), ofColor(200,250,150),NULL,20,20);
     
     for(int i=0;i<21;i++){
         Rectangle myRect;
-        myRect.setup(ofPoint(0,300), ofColor(0,10*i+50,150+5*i), (0.01f*i)+0.05f,20,20);
+        myRect.setup(ofVec2f(0,300), ofColor(0,10*i+50,150+5*i), (0.01f*i)+0.05f,20,20);
         xenoRects.push_back(myRect);
     }
     
@@ -28,18 +30,18 @@ void testApp::update(){
     
     //Fastest non-moving speed
     fastRect.update(20);
-    
+        
     //Multiple Xenos
     if(!trails){
         for(int i=0;i<xenoRects.size();i++){
-            xenoRects[i].xenoToPoint(mouseX, mouseY);
+            xenoRects[i].xenoToPoint(ofVec2f(mouseX, mouseY));
         }
     }
     //Multiple Xeno Trail
     else if(trails){
-        xenoRects[0].xenoToPoint(mouseX, mouseY);
+        xenoRects[0].xenoToPoint(ofVec2f(mouseX, mouseY));
         for(int i=1;i<xenoRects.size();i++){
-            xenoRects[i].xenoToPoint(xenoRects[i-1].pos.x, xenoRects[i-1].pos.y);
+            xenoRects[i].xenoToPoint(ofVec2f(xenoRects[i-1].pos.x, xenoRects[i-1].pos.y));
         }
     }
 
@@ -53,11 +55,11 @@ void testApp::draw(){
     ofRect(ofGetWindowWidth()/2,ofGetWindowHeight()/2,ofGetWindowWidth(),ofGetWindowHeight());
     
     //Slowest moving speed
-    slowRect.displayInfo(ofPoint(0,0));
+    slowRect.displayInfo(ofVec2f(0,0));
     slowRect.draw();
     
     //Fastest moving speed
-    fastRect.displayInfo(ofPoint(0,90));
+    fastRect.displayInfo(ofVec2f(0,90));
     fastRect.draw();
     
     //Click to change Point A and Point B

@@ -11,7 +11,7 @@
 Rectangle::Rectangle(){
 }
 
-void Rectangle::setup(ofPoint _pos, ofColor _color, float _catchUpSpeed, int _width, int _height){
+void Rectangle::setup(ofVec2f _pos, ofColor _color, float _catchUpSpeed, int _width, int _height){
     pos.x = _pos.x;
     pos.y = _pos.y;
     color=_color;
@@ -38,7 +38,7 @@ void Rectangle::draw(){
     ofRect(pos.x,pos.y,width,height);
 }
 
-void Rectangle::displayInfo(ofPoint _infoPos){
+void Rectangle::displayInfo(ofVec2f _infoPos){
     ofSetColor(color);
     infoPos=_infoPos;
     string ins = ofToString((rate*60)/110) + " inches per second";
@@ -51,11 +51,10 @@ void Rectangle::displayInfo(ofPoint _infoPos){
     ofDrawBitmapString(acrossScreen, infoPos.x, infoPos.y+30);
 }
 
-void Rectangle::xenoToPoint(float catchX, float catchY){
+void Rectangle::xenoToPoint(ofVec2f _catchMouse){
     ofSetRectMode(OF_RECTMODE_CENTER); // center around the position
-	pos.x = catchUpSpeed * catchX + (1-catchUpSpeed) * pos.x;
-	pos.y = catchUpSpeed * catchY + (1-catchUpSpeed) * pos.y;
-    float dist = ofDist(catchX,catchY,pos.x,pos.y);
+	pos = catchUpSpeed * _catchMouse + (1-catchUpSpeed) * pos;
+    float dist = ofDist(_catchMouse.x,_catchMouse.y,pos.x,pos.y);
     width = dist+5;
     height = dist+5;
 }

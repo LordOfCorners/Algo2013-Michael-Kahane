@@ -14,19 +14,19 @@ class Rectangle {
 public:
     Rectangle();
     
-    void setup(ofPoint _pos, ofColor _color,float catchUpSpeed, int _width, int _height);
+    void setup(ofVec2f _pos, ofColor _color,float catchUpSpeed, int _width, int _height);
     void update(float _rate);
     void draw();
     
     void interpolateByPct(float myPct);
     
-    void xenoToPoint(float catchX, float catchY);
-    void displayInfo(ofPoint _infoPos);
+    void xenoToPoint(ofVec2f _catchMouse);
+    void displayInfo(ofVec2f _infoPos);
     
-    ofPoint pos;
+    ofVec2f pos;
     
     //for interpolation
-    ofPoint posA, posB, infoPos;
+    ofVec2f posA, posB, infoPos;
     ofColor color;
     
     bool acrossScreen;

@@ -42,6 +42,10 @@ void Particle::update(){
 }
 
 void Particle::draw(){
+    float t = ofGetElapsedTimeMillis()/orbitTime;
+    ofPushMatrix();
     ofSetColor(circleColor);
-    ofCircle(pos.x, pos.y, circleSize);
+    ofRotate(ofRadToDeg(cos(t))); //COMMENT OUT THIS LINE TO MAKE IT CIRCULAR 
+    ofEllipse(pos.x, pos.y, circleSize,circleSize/2);
+    ofPopMatrix();
 }

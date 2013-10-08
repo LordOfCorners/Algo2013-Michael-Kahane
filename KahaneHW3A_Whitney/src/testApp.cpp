@@ -10,7 +10,7 @@ void testApp::setup(){
     post.createPass<FxaaPass>()->setEnabled(true);
     post.createPass<BloomPass>()->setEnabled(true);
     post.createPass<DofPass>()->setEnabled(true);
-    post.createPass<KaleidoscopePass>()->setEnabled(false);
+    post.createPass<KaleidoscopePass>()->setEnabled(true);
     post.createPass<NoiseWarpPass>()->setEnabled(true);
     post.createPass<PixelatePass>()->setEnabled(false);
     post.createPass<EdgePass>()->setEnabled(false);

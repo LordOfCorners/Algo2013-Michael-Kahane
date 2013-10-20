@@ -4,7 +4,7 @@
 void testApp::setup(){
     ofSetVerticalSync(true);
     ofBackground(0);
-    ofSetBackgroundAuto(false);
+    ofSetBackgroundAuto(true);
 
     
     box2d.init();
@@ -32,7 +32,7 @@ void testApp::setup(){
 void testApp::update(){
     timer = ofGetElapsedTimef()-value;
     box2d.update();
-    if(timer>5){
+    if(timer>1){
         value=ofGetElapsedTimef();
         float r = ofRandom(30, 50);		// a random radius 4px - 20px
 		ofxBox2dCircle circle;

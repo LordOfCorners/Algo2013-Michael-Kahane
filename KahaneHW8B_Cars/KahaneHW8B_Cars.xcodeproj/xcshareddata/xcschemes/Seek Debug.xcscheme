@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-               BuildableName = "KahaneHW7A_FrancescaFork.app"
-               BlueprintName = "KahaneHW7A_FrancescaFork"
-               ReferencedContainer = "container:KahaneHW7A_FrancescaFork.xcodeproj">
+               BuildableName = "KahaneHW8B_Cars.app"
+               BlueprintName = "KahaneHW8B_Cars"
+               ReferencedContainer = "container:KahaneHW8B_Cars.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "KahaneHW7A_FrancescaFork.app"
-            BlueprintName = "KahaneHW7A_FrancescaFork"
-            ReferencedContainer = "container:KahaneHW7A_FrancescaFork.xcodeproj">
+            BuildableName = "KahaneHW8B_Cars.app"
+            BlueprintName = "KahaneHW8B_Cars"
+            ReferencedContainer = "container:KahaneHW8B_Cars.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "KahaneHW7A_FrancescaFork.app"
-            BlueprintName = "KahaneHW7A_FrancescaFork"
-            ReferencedContainer = "container:KahaneHW7A_FrancescaFork.xcodeproj">
+            BuildableName = "KahaneHW8B_Cars.app"
+            BlueprintName = "KahaneHW8B_Cars"
+            ReferencedContainer = "container:KahaneHW8B_Cars.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "KahaneHW7A_FrancescaFork.app"
-            BlueprintName = "KahaneHW7A_FrancescaFork"
-            ReferencedContainer = "container:KahaneHW7A_FrancescaFork.xcodeproj">
+            BuildableName = "KahaneHW8B_Cars.app"
+            BlueprintName = "KahaneHW8B_Cars"
+            ReferencedContainer = "container:KahaneHW8B_Cars.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

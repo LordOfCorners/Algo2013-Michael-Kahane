@@ -7,11 +7,11 @@ void testApp::setup(){
     
     // Setup post-processing chain
     post.init(ofGetWidth(), ofGetHeight());
-    post.createPass<FxaaPass>()->setEnabled(true);
-    post.createPass<BloomPass>()->setEnabled(true);
-    post.createPass<DofPass>()->setEnabled(true);
-    post.createPass<KaleidoscopePass>()->setEnabled(true);
-    post.createPass<NoiseWarpPass>()->setEnabled(true);
+    post.createPass<FxaaPass>()->setEnabled(false);
+    post.createPass<BloomPass>()->setEnabled(false);
+    post.createPass<DofPass>()->setEnabled(false);
+    post.createPass<KaleidoscopePass>()->setEnabled(false);
+    post.createPass<NoiseWarpPass>()->setEnabled(false);
     post.createPass<PixelatePass>()->setEnabled(false);
     post.createPass<EdgePass>()->setEnabled(false);
     

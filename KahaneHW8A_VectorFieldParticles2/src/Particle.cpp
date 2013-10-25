@@ -38,5 +38,10 @@ void Particle::update(){
 
 void Particle::draw() {
     ofSetColor(color);
-    ofCircle( pos, 1 );
+    ofCircle( pos, 2 );
+}
+
+void Particle::reset(){
+    pos = ofVec2f( ofRandom(-300,ofGetWindowWidth()+300), ofRandom(-300,ofGetWindowHeight()+300) );
+    vel = ofVec2f(0,0);
 }

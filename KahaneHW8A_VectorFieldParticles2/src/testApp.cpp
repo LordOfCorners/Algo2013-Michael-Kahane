@@ -11,7 +11,7 @@ void testApp::setup(){
     ofBackground(0);
     
     //add particles
-    for( int i=0; i<60000; i++ ){ //play with this number
+    for( int i=0; i<30000; i++ ){ //play with this number
         addParticle();
     }
     
@@ -31,17 +31,19 @@ void testApp::update(){
 
     //add forces
     for( int i=0; i<particleList.size(); i++ ){
-        particleList[i].applyForce( myField.getForceAtPosition(particleList[i].pos ) * 0.005 );
+        particleList[i].applyForce( myField.getForceAtPosition(particleList[i].pos ) * 0.004 );
         particleList[i].update();
     }
-}
+    ofSetWindowTitle(ofToString(ofGetFrameRate()));
+    
+ }
 
 //--------------------------------------------------------------
 void testApp::draw(){
     ofSetColor(20,20,20,255*.4);
     ofRect(0,0,ofGetWindowWidth(),ofGetWindowHeight());
     ofSetColor(255,255,255,255*.02);
-    myField.draw();
+//    myField.draw();
 
     for( int i=0; i<particleList.size(); i++ ){
         particleList[i].draw();

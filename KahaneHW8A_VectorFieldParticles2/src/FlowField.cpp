@@ -75,7 +75,7 @@ void FlowField::update(ofVideoGrabber vid) {
             float br = (r+b+g) / 765.0;
             
             //use HSB color
-            ofSetColor(ofColor::fromHsb(br*255,255,255));
+//            ofSetColor(ofColor::fromHsb(br*255,255,255));
             
             //calculate sine and cosine of brightness
             float co = cos(br*TWO_PI);

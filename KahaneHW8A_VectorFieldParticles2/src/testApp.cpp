@@ -11,7 +11,7 @@ void testApp::setup(){
     ofBackground(0);
     
     //add particles
-    for( int i=0; i<30000; i++ ){ //play with this number
+    for( int i=0; i<20000; i++ ){ //play with this number
         addParticle();
     }
     
@@ -30,36 +30,72 @@ void testApp::update(){
     vid.update();
 
     //add forces
+
+    ofLog( OF_LOG_NOTICE, "size is " + ofToString(particleList.size()) );
+
+    for( vector<Particle>::iterator it=particleList.begin(); it!=particleList.end(); ){
+        
+        if(it->pos.x<-300|| it->pos.x>ofGetWindowWidth()+300 || it->pos.y>ofGetWindowHeight()+300 ){
+            it = particleList.erase(it);
+            
+            Particle part;
+            part.pos = ofVec2f( ofRandom(-300,ofGetWindowWidth()+300), ofRandom(-300,ofGetWindowHeight()+300) );
+            particleList.push_back( part );
+            
+        }else {
+            it++;
+        }
+    }
+    
     for( int i=0; i<particleList.size(); i++ ){
         particleList[i].applyForce( myField.getForceAtPosition(particleList[i].pos ) * 0.004 );
         particleList[i].update();
+        
+//        unsigned char *pixels=vid.getPixels();
+//        int index = particleList[i].pos.y*vid.getWidth()*3 + particleList[i].pos.x*3;
+//        int red = pixels[index];
+//        int green = pixels[index+1];
+//        int blue = pixels[index+2];
+//        particleList[i].color = ofColor(red,green,blue);
+
     }
+    
+    
+    
+    
     ofSetWindowTitle(ofToString(ofGetFrameRate()));
+    
     
  }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    ofSetColor(20,20,20,255*.4);
-    ofRect(0,0,ofGetWindowWidth(),ofGetWindowHeight());
+    ofPushMatrix();
+    ofSetColor(20,20,20,255*.2);
+//    ofRect(0,0,ofGetWindowWidth(),ofGetWindowHeight());
     ofSetColor(255,255,255,255*.02);
 //    myField.draw();
 
     for( int i=0; i<particleList.size(); i++ ){
         particleList[i].draw();
     }
+    ofPopMatrix();
 }
 
 
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-    
+    if (key == 'r'){
+        for(int i = 0; i<particleList.size(); i++){
+            particleList[i].reset();
+        }
+    }
 }
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-    
+
 }
 
 //--------------------------------------------------------------

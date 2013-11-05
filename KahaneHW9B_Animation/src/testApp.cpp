@@ -24,6 +24,7 @@ void testApp::setup(){
     circles.push_back(circle);
     
     ofImage tempImage;
+
     tempImage.loadImage("image2.png");
 //    tempImage.resize(r*2,r*2);
     images.push_back(tempImage);

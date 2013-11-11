@@ -1,0 +1,42 @@
+<tracks>
+    <page>
+        <name>Page One</name>
+        <track>
+            <type>Audio</type>
+            <xmlFileName></xmlFileName>
+            <trackName>audio</trackName>
+            <displayName>audio</displayName>
+            <sendOSC>1</sendOSC>
+            <receiveOSC>0</receiveOSC>
+            <clip>/Users/michaelkahane/Documents/openFrameworks 8/apps/Algo2013-Michael Kahane/KahaneHW11B_DurationReceiver/bin/data/05 Breakfast Enthusiast.wav</clip>
+        </track>
+        <track>
+            <type>Colors</type>
+            <xmlFileName>colors_.xml</xmlFileName>
+            <trackName>colors</trackName>
+            <displayName>colors</displayName>
+            <sendOSC>1</sendOSC>
+            <receiveOSC>0</receiveOSC>
+            <palette>GUI/defaultColorPalette.png</palette>
+        </track>
+    </page>
+</tracks>
+<timelineSettings>
+    <duration>00:02:34:822</duration>
+    <playhead>00:01:53:928</playhead>
+    <inpoint>00:00:00:000</inpoint>
+    <outpoint>00:02:34:822</outpoint>
+    <loop>0</loop>
+</timelineSettings>
+<projectSettings>
+    <useBPM>0</useBPM>
+    <bpm>120.000000000</bpm>
+    <snapToBPM>0</snapToBPM>
+    <snapToKeys>1</snapToKeys>
+    <oscInEnabled>0</oscInEnabled>
+    <oscOutEnabled>1</oscOutEnabled>
+    <oscInPort>12346</oscInPort>
+    <oscIP>localhost</oscIP>
+    <oscOutPort>12345</oscOutPort>
+    <oscRate>30.000000000</oscRate>
+</projectSettings>
